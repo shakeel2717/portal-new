@@ -1,59 +1,50 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
-
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
-
-        <form method="POST" action="{{ route('register') }}">
-            @csrf
-
-            <!-- Name -->
-            <div>
-                <x-label for="name" :value="__('Name')" />
-
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
+@extends('layouts.auth')
+@section('title','Sign Up')
+@section('form')
+<a href="{{ asset('dashboard/index.html') }}" class="navbar-brand d-flex align-items-center mb-3">
+    <img src="{{ asset('assets/brand/Logo-color.svg') }}" alt="">
+</a>
+<h2 class="mb-2 text-center">@yield('title')</h2>
+<p class="text-center">Create your {{ env('APP_NAME') }} account.</p>
+<form accept="{{ route('register') }}" method="POST">
+    @csrf
+    <div class="row">
+        <div class="col-lg-12">
+            <x-input name="name" type="text" placeholder="Your Full Name" />
+        </div>
+        <div class="col-lg-12">
+            <x-input name="email" type="email" placeholder="Enter your Email" />
+        </div>
+        <div class="col-lg-12">
+            <x-input name="password" type="password" placeholder="Type your Password" />
+        </div>
+        <div class="col-lg-12">
+            <x-input name="password_confirmation" type="password" placeholder="Confirm your Password" />
+        </div>
+        <div class="col-lg-12 d-flex justify-content-between">
+            <div class="form-check mb-3">
+                <input type="checkbox" class="form-check-input" id="customCheck1">
+                <label class="form-check-label" for="customCheck1">I agree to the Terms</label>
             </div>
-
-            <!-- Email Address -->
-            <div class="mt-4">
-                <x-label for="email" :value="__('Email')" />
-
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
-            </div>
-
-            <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
-
-                <x-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="new-password" />
-            </div>
-
-            <!-- Confirm Password -->
-            <div class="mt-4">
-                <x-label for="password_confirmation" :value="__('Confirm Password')" />
-
-                <x-input id="password_confirmation" class="block mt-1 w-full"
-                                type="password"
-                                name="password_confirmation" required />
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
-
-                <x-button class="ml-4">
-                    {{ __('Register') }}
-                </x-button>
-            </div>
-        </form>
-    </x-auth-card>
-</x-guest-layout>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center">
+        <button type="submit" class="btn btn-primary">Create Account</button>
+    </div>
+    <p class="text-center my-3">or sign up with other accounts?</p>
+    <div class="d-flex justify-content-center">
+        <ul class="list-group list-group-horizontal list-group-flush">
+            <li class="list-group-item border-0 pb-0">
+                <a href="#"><img src="{{ asset('assets/images/brands/fb.svg') }}" alt="fb"></a>
+            </li>
+            <li class="list-group-item border-0 pb-0">
+                <a href="#"><img src="{{ asset('assets/images/brands/gm.svg') }}" alt="gm"></a>
+            </li>
+        </ul>
+    </div>
+    <p class="mt-3 text-center">
+        Already have an account? <a href="{{ route('register') }}" class="text-underline">Click
+            here to sign in.</a>
+    </p>
+</form>
+@endsection

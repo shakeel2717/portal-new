@@ -36,12 +36,6 @@
             <li class="list-group-item border-0 pb-0">
                 <a href="#"><img src="{{ asset('assets/images/brands/gm.svg') }}" alt="gm"></a>
             </li>
-            <li class="list-group-item border-0 pb-0">
-                <a href="#"><img src="{{ asset('assets/images/brands/im.svg') }}" alt="im"></a>
-            </li>
-            <li class="list-group-item border-0 pb-0">
-                <a href="#"><img src="{{ asset('assets/images/brands/li.svg') }}" alt="li"></a>
-            </li>
         </ul>
     </div>
     <p class="mt-3 text-center">
