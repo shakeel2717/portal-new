@@ -6,7 +6,7 @@
         </div>
         <div class="mt-4">
             <a href="#" class="card-title text-uppercase  text-primary h4" data-bs-toggle="offcanvas"
-                data-bs-target="#deviceModal" aria-controls="deviceModal">{{ $device->name }}</a>
+                data-bs-target="#deviceModal{{ $device->id }}" aria-controls="deviceModal{{ $device->id }}">{{ $device->name }}</a>
         </div>
         <div class="mt-4">
             <div class="employees d-flex">
@@ -41,12 +41,12 @@
     </div>
 </div>
 
-<div class="offcanvas offcanvas-end-800" tabindex="-1" id="deviceModal" aria-labelledby="deviceModalLabel">
+<div class="offcanvas offcanvas-end-800" tabindex="-1" id="deviceModal{{ $device->id }}" aria-labelledby="deviceModal{{ $device->id }}Label">
     <div class="offcanvas-header">
         <button type="bsutton" class="btn-close text-reset me-4" data-bs-dismiss="offcanvas"
             aria-label="Close"></button>
         <div class="head-content d-flex justify-content-between w-100 mt-3">
-            <h5 id="deviceModalLabel">Task Detail</h5>
+            <h5 id="deviceModal{{ $device->id }}Label">Task Detail</h5>
             <a href="#" class="btn btn-primary btn-md me-4">Save</a>
         </div>
     </div>
@@ -115,11 +115,7 @@
                         <i class="bi bi-text-paragraph me-3 fs-3"></i>
                         <div class="description">
                             <p class="">Description</p>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod enim veritatis veniam
-                                quisquam
-                                eveniet dignissimos, sit libero cumque vel, cum impedit tempore ullam voluptates aut ab
-                                tenetur
-                                laborum officiis ipsum.</p>
+                            <p>{{ $device->description }}</p>
                         </div>
                     </div>
                 </div>
@@ -130,11 +126,7 @@
                         <i class="bi bi-paperclip me-3 fs-3"></i>
                         <div class="attachment">
                             <p class="">Attachment</p>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod enim veritatis veniam
-                                quisquam
-                                eveniet dignissimos, sit libero cumque vel, cum impedit tempore ullam voluptates aut ab
-                                tenetur
-                                laborum officiis ipsum.</p>
+                            <p>No Attachment</p>
                         </div>
                     </div>
                 </div>
@@ -148,14 +140,6 @@
                             <div class="mb-3 form-check">
                                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
                                 <label class="form-check-label" for="exampleCheck1">Screen Repair</label>
-                            </div>
-                            <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck2">
-                                <label class="form-check-label" for="exampleCheck2">Create mood board</label>
-                            </div>
-                            <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck3">
-                                <label class="form-check-label" for="exampleCheck3">Motherboard change</label>
                             </div>
                             <div class="task-btn">
                                 <a href="#" class="btn btn-primary btn-md"><i class="bi bi-plus-lg"></i> Add new Task</a>
