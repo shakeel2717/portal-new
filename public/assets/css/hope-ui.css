@@ -7599,6 +7599,16 @@ textarea.form-control-lg {
           transform: translateX(100%);
 }
 
+.offcanvas-end-800 {
+  top: 0;
+  right: 0;
+  width: 800px;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  -webkit-transform: translateX(100%);
+      -ms-transform: translateX(100%);
+          transform: translateX(100%);
+}
+
 .offcanvas-top {
   top: 0;
   right: 0;

@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>@yield('title', env('APP_NAME')) {{ env('APP_DESC') }}</title>
     <link rel="shortcut icon" href="{{ asset('assets/brand/favi-color.svg') }}" />
-    <link rel="stylesheet" href="../assets/css/core/libs.min.css" />
-    <link rel="stylesheet" href="../assets/vendor/aos/dist/aos.css" />
-    <link rel="stylesheet" href="../assets/css/hope-ui.min.css?v=1.2.0" />
-    <link rel="stylesheet" href="../assets/css/custom.min.css?v=1.2.0" />
-    <link rel="stylesheet" href="../assets/css/dark.min.css" />
-    <link rel="stylesheet" href="../assets/css/rtl.min.css" />
+    <link rel="stylesheet" href="{{ asset('assets/css/core/libs.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/vendor/aos/dist/aos.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/hope-ui.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/dark.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/rtl.css') }}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css">
 </head>
 
@@ -139,17 +139,17 @@
             </div>
         </footer>
     </main>
-    <script src="../assets/js/core/libs.min.js"></script>
-    <script src="../assets/js/core/external.min.js"></script>
-    <script src="../assets/js/charts/widgetcharts.js"></script>
-    <script src="../assets/js/charts/vectore-chart.js"></script>
-    <script src="../assets/js/charts/dashboard.js"></script>
-    <script src="../assets/js/plugins/fslightbox.js"></script>
-    <script src="../assets/js/plugins/setting.js"></script>
-    <script src="../assets/js/plugins/slider-tabs.js"></script>
-    <script src="../assets/js/plugins/form-wizard.js"></script>
-    <script src="../assets/vendor/aos/dist/aos.js"></script>
-    <script src="../assets/js/hope-ui.js" defer></script>
+    <script src="{{ asset('assets/js/core/libs.min.js') }}"></script>
+    <script src="{{ asset('assets/js/core/external.min.js') }}"></script>
+    <script src="{{ asset('assets/js/charts/widgetcharts.js') }}"></script>
+    <script src="{{ asset('assets/js/charts/vectore-chart.js') }}"></script>
+    <script src="{{ asset('assets/js/charts/dashboard.js') }}"></script>
+    <script src="{{ asset('assets/js/plugins/fslightbox.js') }}"></script>
+    <script src="{{ asset('assets/js/plugins/setting.js') }}"></script>
+    <script src="{{ asset('assets/js/plugins/slider-tabs.js') }}"></script>
+    <script src="{{ asset('assets/js/plugins/form-wizard.js') }}"></script>
+    <script src="{{ asset('assets/vendor/aos/dist/aos.js') }}"></script>
+    <script src="{{ asset('assets/js/hope-ui.js') }}"></script>
     <x-alert />
 </body>
 
