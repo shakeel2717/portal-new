@@ -6,14 +6,15 @@ use Illuminate\View\Component;
 
 class Todo extends Component
 {
+    public $device;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($device)
     {
-        //
+        $this->device = $device;
     }
 
     /**
