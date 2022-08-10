@@ -56,7 +56,7 @@
             <div class="card-body">
                 <div class="d-flex justify-content-between">
                     <h5 class="card-title">On going Repair</h5>
-                    <h5 class="card-title">{{ $devices->where('status','on going')->count() }} Orders</h5>
+                    <h5 class="card-title">{{ $devices->where('status','on going repair')->count() }} Orders</h5>
                 </div>
             </div>
         </div>

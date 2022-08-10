@@ -38,7 +38,11 @@
         </div>
         <div class="sidebar-body pt-0 data-scrollbar">
             <div class="sidebar-list">
+                @if (auth()->user()->role == "employee")
                 <x-nav />
+                @else
+                <x-admin.nav />
+                @endif
             </div>
         </div>
         <div class="sidebar-footer"></div>
@@ -106,7 +110,12 @@
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                                    <li>
+                                        <form action="{{ route('logout') }}" method="POST">
+                                            @csrf
+                                            <input type="submit" value="Logout" class="dropdown-item">
+                                        </form>
+                                    </li>
                                 </ul>
                             </li>
                         </ul>
