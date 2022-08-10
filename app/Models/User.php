@@ -45,6 +45,6 @@ class User extends Authenticatable
 
     public function devices()
     {
-        return $this->belongsToMany(Device::class);
+        return $this->belongsToMany(Device::class)->withTimestamps();;
     }
 }

@@ -17,6 +17,22 @@ class DeviceController extends Controller
         //
     }
 
+    public function assign(Request $request)
+    {
+        $validated = $request->validate([
+            'device_id' => 'required|integer|exists:devices,id',
+            'employee_id' => 'required|integer|exists:users,id'
+        ]);
+
+        // assigning this employee to device
+        $device = Device::find($validated['device_id']);
+
+        $device->users()->syncWithoutDetaching($validated['employee_id']);
+
+        return redirect()->back()->with("success","Employee Assigned to the Device Successfully");
+
+    }
+
     /**
      * Show the form for creating a new resource.
      *

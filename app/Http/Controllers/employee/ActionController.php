@@ -35,4 +35,18 @@ class ActionController extends Controller
 
         return redirect()->back()->with("success","Device Mark as Complete");
     }
+
+    public function testing(Request $request)
+    {
+        $validated = $request->validate([
+            'device_id' => 'required|integer|exists:devices,id'
+        ]);
+
+        // updating this device status
+        $device = Device::find($validated['device_id']);
+        $device->status = "testing";
+        $device->save();
+
+        return redirect()->back()->with("success","Device Sent for Testing..");
+    }
 }

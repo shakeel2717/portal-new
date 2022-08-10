@@ -16,13 +16,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
-
         User::create([
             'name' => 'Admin',
             'email' => 'admin@gmail.com',
@@ -36,5 +29,8 @@ class DatabaseSeeder extends Seeder
             'email' => 'test@gmail.com',
             'password' => bcrypt('asdfasdf'),
         ]);
+
+        \App\Models\User::factory(20)->create();
+
     }
 }

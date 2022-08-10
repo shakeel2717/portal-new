@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class DeviceUser extends Model
 {
     use HasFactory;
+
+
 }
