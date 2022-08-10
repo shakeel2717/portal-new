@@ -45,7 +45,7 @@
                     <h5 class="card-title">To Do</h5>
                     <h5 class="card-title">{{ $devices->count() }} Orders</h5>
                 </div>
-                @foreach ($devices as $device)
+                @foreach ($devices->where('status','pending') as $device)
                 <x-todo :device="$device" />
                 @endforeach
             </div>
@@ -58,6 +58,9 @@
                     <h5 class="card-title">On going Repair</h5>
                     <h5 class="card-title">{{ $devices->where('status','on going repair')->count() }} Orders</h5>
                 </div>
+                @foreach ($devices->where('status','on going repair') as $device)
+                <x-todo :device="$device" />
+                @endforeach
             </div>
         </div>
     </div>
@@ -68,6 +71,9 @@
                     <h5 class="card-title">Testing</h5>
                     <h5 class="card-title">{{ $devices->where('status','testing')->count() }} Orders</h5>
                 </div>
+                @foreach ($devices->where('status','testing') as $device)
+                <x-todo :device="$device" />
+                @endforeach
             </div>
         </div>
     </div>
@@ -78,6 +84,9 @@
                     <h5 class="card-title">Completed</h5>
                     <h5 class="card-title">{{ $devices->where('status','completed')->count() }} Orders</h5>
                 </div>
+                @foreach ($devices->where('status','completed') as $device)
+                <x-todo :device="$device" />
+                @endforeach
             </div>
         </div>
     </div>

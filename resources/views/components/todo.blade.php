@@ -63,7 +63,20 @@
                                 <span class="visually-hidden">TO DO</span>
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li>
+                                    <form action="{{ route('employee.action.sent.to.repair') }}" method="POST">
+                                        @csrf
+                                        <input type="hidden" name="device_id" value="{{ $device->id }}">
+                                        <input type="submit" value="Sent to Repair" class="dropdown-item">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form action="{{ route('employee.action.complete') }}" method="POST">
+                                        @csrf
+                                        <input type="hidden" name="device_id" value="{{ $device->id }}">
+                                        <input type="submit" value="Mark as Complete" class="dropdown-item">
+                                    </form>
+                                </li>
                             </ul>
                         </div>
                     </div>
