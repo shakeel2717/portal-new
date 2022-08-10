@@ -31,6 +31,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         \App\Models\User::factory(20)->create();
+        \App\Models\Device::factory(20)->create();
 
     }
 }

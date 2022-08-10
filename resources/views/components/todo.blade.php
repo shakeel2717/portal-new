@@ -12,18 +12,18 @@
                 @foreach ($device->users as $user)
                 <a href="#">
                     <div class="iq-media-group iq-media-group-1" @if (!$loop->first) style="margin-left:-20px " @endif>
-                        <img src="{{ asset('assets/brand/profile-dark.svg') }}" alt="" class="avatar-50">
+                        <img src="https://i.pravatar.cc/200?u{{ $loop->index }}" alt="" class="theme-color-default-img img-fluid rounded-pill avatar-50">
                     </div>
                 </a>
                 @endforeach
-                <a href="#" data-bs-toggle="offcanvas" data-bs-target="#assignEmployee" aria-controls="assignEmployee">
+                <a href="#" data-bs-toggle="offcanvas" data-bs-target="#assignEmployee{{ $device->id }}" aria-controls="assignEmployee{{ $device->id }}">
                     <div class="iq-media-group iq-media-group-1">
                         <i class="bi bi-plus-circle fs-1"></i>
                     </div>
                 </a>
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="assignEmployee" aria-labelledby="assignEmployeeLabel">
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="assignEmployee{{ $device->id }}" aria-labelledby="assignEmployee{{ $device->id }}Label">
                     <div class="offcanvas-header">
-                        <h5 id="assignEmployeeLabel">Assign to Device</h5>
+                        <h5 id="assignEmployee{{ $device->id }}Label">Assign to Device {{$device->id}}</h5>
                         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
@@ -129,7 +129,7 @@
                                     @forelse ($device->users as $user)
                                     <a href="#">
                                         <div class="iq-media-group iq-media-group-1" @if (!$loop->first) style="margin-left:-20px " @endif>
-                                            <img src="{{ asset('assets/brand/profile-dark.svg') }}" alt="" class="avatar-50">
+                                            <img src="https://i.pravatar.cc/200?u{{ $loop->index }}" alt="" class="theme-color-default-img img-fluid rounded-pill avatar-50">
                                         </div>
                                     </a>
                                     @empty
